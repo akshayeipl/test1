@@ -1,0 +1,403 @@
+/*
+Theme Name: Mandeep
+Theme URI: https://wordpress.org/themes/twentyfifteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: twentyfifteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/**
+ * Table of Contents
+ *
+ * 1.0 - Reset
+ * 2.0 - Genericons
+ * 3.0 - Typography
+ * 4.0 - Elements
+ * 5.0 - Forms
+ * 6.0 - Navigations
+ *   6.1 - Links
+ *   6.2 - Menus
+ * 7.0 - Accessibility
+ * 8.0 - Alignments
+ * 9.0 - Clearings
+ * 10.0 - Header
+ * 11.0 - Widgets
+ * 12.0 - Content
+ *    12.1 - Posts and pages
+ *    12.2 - Post Formats
+ *    12.3 - Comments
+ * 13.0 - Footer
+ * 14.0 - Media
+ *    14.1 - Captions
+ *    14.2 - Galleries
+ * 15.0 - Multisite
+ * 16.0 - Media Queries
+ *    16.1 - Mobile Large
+ *    16.2 - Tablet Small
+ *    16.3 - Tablet Large
+ *    16.4 - Desktop Small
+ *    16.5 - Desktop Medium
+ *    16.6 - Desktop Large
+ *    16.7 - Desktop X-Large
+ * 17.0 - Print
+ */
+
+
+/**
+ * 1.0 - Reset
+ *
+ * Resetting and rebuilding styles have been helped along thanks to the fine
+ * work of Eric Meyer, Nicolas Gallagher, Jonathan Neal, and Blueprint.
+ */
+
+
+/* ---------------------------------------------------------------------- */
+/*	Basic Elements & Classes
+/* ---------------------------------------------------------------------- */
+
+body {
+	background:#ffffff; margin:0px;
+}
+
+
+@font-face {
+font-family:OswalReg;
+src: url('fonts/Oswald-Regular.ttf'),url('fonts/Oswald-Regular.otf'),url('fonts/Oswald-Regular.eot'),url('fonts/Oswald-Regular.woff'),url('fonts/Oswald-Regular.svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family:Oswallight;
+src: url('fonts/oswald-light.ttf'),url('fonts/oswald-light.otf'),url('fonts/oswald-light.eot'),url('fonts/oswald-light.woff'),url('fonts/oswald-light.svg');
+font-weight: normal;
+font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('fonts/opensans-regular.eot');
+    src: url('fonts/opensans-regular.eot') format('embedded-opentype'),
+         url('fonts/opensans-regular.woff') format('woff'),
+         url('fonts/opensans-regular.ttf') format('truetype'),
+         url('fonts/opensans-regular.svg#OpenSansRegular') format('svg');
+}
+
+
+.Link1 a{ text-decoration:none; color:#505050; }
+.Link1 a:hover{ text-decoration: none; color:#00599c;}
+
+.Link2 a{ text-decoration:none; color:#afc5d4; }
+.Link2 a:hover{ text-decoration: underline; color:#fff;}
+
+.Light11 { font-family: Arial, Helvetica, sans-serif; font-size:11px;}
+.Light12 { font-family: Arial, Helvetica, sans-serif; font-size:12px;}
+.Light13 { font-family: Arial, Helvetica, sans-serif; font-size:13px;}
+.Light16 { font-family: Arial, Helvetica, sans-serif; font-size:16px;}
+.Light19 { font-family: Arial, Helvetica, sans-serif; font-size:19px;}
+
+.Bold{ font-weight:bold;}
+.White{ color:#fff;}
+.Black{ color:#000;}
+.grey1{ color:#afc5d4;}
+
+.Upparcase{ text-transform:uppercase;}
+.Lineheight1{ line-height:18px;}
+.Lineheight2{ line-height:36px;}
+.Lineheight3{ line-height:24px;}
+.Align_cent{ text-align:center;}
+.Align_right{ text-align:right;}
+.Justify{ text-align:justify;}
+.Italic{ font-style:italic;}
+
+.Fl{ float:left;}
+.Fr{ float:right !important;}
+
+.posn{ position: relative;}
+
+.Txtbx_1{ 
+      background:none; width:100%; 
+	  border:none; 
+	  font-family:Arial, Helvetica, sans-serif;
+	  font-size:12px;
+	  color:#000;
+	  height:24px; }
+	  
+
+/*----Nav-------*/
+
+#Main_menu{ width:100%;  
+       float:left; position:relative;   }
+
+.Menubx {
+    width:100%; 
+     float:right; position:relative;}
+
+.toggleMenu {
+    display:  none; 
+     font-size:17px; font-family:OswalReg; 
+    padding: 12px 0; text-align:center; text-decoration:none;  
+    color: #fff;  text-transform:uppercase; 
+}
+#menu-home-menu {
+    list-style: none;
+     *zoom: 1; margin:0;
+      padding:0px;
+}
+#menu-home-menu:before,
+#menu-home-menu:after {
+    content: " "; 
+    display: table; 
+}
+#menu-home-menu:after {
+    clear: both;
+}
+#menu-home-menu ul {
+    list-style: none;
+    width: 9em;
+}
+
+#menu-home-menu li { position: relative;  background:url(images/nav_right.png) no-repeat right center; }
+#menu-home-menu li:last-child{ background:none;}
+
+
+#menu-home-menu li a {  
+   text-decoration:none; 
+   font-size:17px; 
+  font-family:Oswallight; 
+   color:#fff;  text-align:center; 
+   padding:0px 22px 0px; line-height:50px;  }
+
+
+#menu-home-menu li a:hover, #menu-home-menu li.current-menu-item a{ color:#ffc600; 
+background: url(images/arw_top.png) no-repeat center bottom; padding-bottom: 12px;
+  text-decoration:none; }
+
+#menu-home-menu > li {
+    float: left;
+    
+}
+
+.nav > li > a {
+    display: block; float:left; 
+}
+.nav li  ul {
+    position: absolute;
+    left: -9999px; top:93px; padding:0px 0px 10px;
+	width:196px; background:#fff; 
+
+	border-radius:0 0 5px 5px;
+	z-index:1;
+	
+	 
+}
+.nav > li.hover > ul { 
+    left:0px; 
+}
+.nav li li.hover ul {
+    left:70%;
+    top: 0;
+}
+
+.nav li li {
+	padding-right:0px;
+	background:none;
+    
+}
+
+.nav li li a {
+    display: block; color:#8dbcdf;
+     padding:6px 10px; font-family:'OpenSansSemibold'; 
+    position: relative; font-weight:normal;
+    z-index:100; line-height:18px;
+	
+	font-size:14px;
+	text-align:left;
+    
+}
+.nav li li li a {
+    background:#48a6e3; 
+    z-index:200;
+    border-top: 1px solid #fff;
+}
+.top_menu span {
+  color: #090909;
+  margin: 0 8px;
+}
+
+/*---end---*/
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+/*---Nav---*/
+	
+.toggleMenu {
+    display:  none !important;
+   
+}
+.nav{ display:block !important; margin:0px;}
+
+
+.nav li a{ padding:0px 10px; font-size:13px;}
+.Menubx{ margin:0 auto; display:table; float:none;}
+
+/*---end--*/
+}
+
+/* All Mobile Sizes */
+@media only screen and (max-width: 767px) {
+
+/*---Nav---*/
+#Main_menu{ width:100%; margin-bottom:0; padding:0px; border-radius:0px;}
+
+.Menubx{ z-index:1; width:100%; }
+.toggleMenu { display:block !important;}
+.active {
+        display: block;
+    }
+	
+.nav {
+    list-style: none;
+     *zoom: 1;
+     background: #004f91; border-radius:5px;  margin:5px 0 0;
+}
+
+.nav a {
+     text-decoration:none;
+    
+}
+.nav > li {
+        float: none;
+    }
+.nav > li > .parent {
+        background-position: 95% 50%;
+    }
+.nav li li .parent {
+        background-image: url("images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+.nav ul {
+        display: block;
+        width: 100%; padding:0px;
+    }
+   .nav > li.hover > ul , .nav li li.hover ul {
+        position: static; 
+    }
+  
+.nav li a {
+    background:none; color:#fff; float:none;  }  
+  
+
+
+.nav li { background:none; padding-right:0px; border-bottom:#fff 1px solid; margin-right:0; padding-bottom:0px;}
+.nav li:last-child{ border-radius:0 0 5px 5px;}
+
+.nav li ul{ width:auto; border-radius:0px;}
+
+.nav li li a{ text-align:center;}
+
+.nav li a:hover, .nav li .current{ border-radius:0;}
+
+/*--end---*/
+
+
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+#menu-home-top-menu li {
+  display: inline;
+  list-style: outside none none;
+}
+#menu-home-top-menu li:last-child {
+  display: none;
+}
+.edit_cont .entry-content{ text-align:center}
+.edit_cont_inner .entry-content{ text-align:center}
+.wpcf7-form-control.wpcf7-text {
+  color: #4c4b4b;
+  height: 30px;
+  margin-bottom: 20px;
+  padding-left: 6px;
+  width: 100%;
+}
+textarea {
+  color: #4c4b4b; padding-left: 5px;
+    padding-top: 5px;
+}
+
+.wpcf7-form-control.wpcf7-submit {
+  background: #1a619c none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  padding: 7px 15px;  margin-top: 20px; float: right; cursor:pointer;
+}
+div.wpcf7-validation-errors {
+  border: 2px solid #f7e700;
+  margin: 45px auto 0;
+  width: 233px; display:none !important;
+}
+div.wpcf7-mail-sent-ok {
+  border: 2px solid #398f14;
+  margin: 45px auto 0;
+  width: 310px;
+}
+.page-id-22 .leftcontent {
+  color: #4c4b4b;
+  float: left;
+  text-align: left;
+  width: 65%;
+}
+.page-id-22 .rightcontent {
+  color: #4c4b4b;
+  float: left;
+  width: 35%;
+}.clear {
+  clear: both;
+}
+.rightcontent > h2 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.map {
+  margin-top: 40px;
+}
+span.wpcf7-not-valid-tip {
+  color: #f00;
+  display: block;
+  font-size: 1em;
+  margin-top: -19px;
+  text-align: left;
+}
+.imprssmleft {
+  float: left;
+  margin-top: 2%;
+  width: 55%;
+}
+.impressmright {
+  float: right;
+  margin-top: 2%;
+  width: 45%;
+}
+.haftbold {
+  font-size: 18px !important;
+  padding-bottom: 0 !important;
+}
