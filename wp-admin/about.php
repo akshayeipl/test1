@@ -1,4 +1,4 @@
-<?php
+<?php exit;
 /**
  * About This Version administration panel.
  *
